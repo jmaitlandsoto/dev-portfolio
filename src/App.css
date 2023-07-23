@@ -1,7 +1,7 @@
 #root {
-  background-color: rgb(39, 39, 39);
+  background-color: rgb(24, 5, 9);
+  color: aliceblue;
 }
-
 
 .logo {
   height: 6em;
@@ -14,6 +14,10 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.heading {
+  line-height: 1.1;
 }
 
 @keyframes logo-spin {
@@ -31,27 +35,20 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
-
 .read-the-docs {
   color: #888;
 }
 
-.hero-section {
-  background-color: rgb(39, 39, 39);
-  color: aliceblue;
-  height: 90vh;
-}
+
 
 .hero-image {
-  width: 400px; /* Adjust as needed */
-  height: 400px; /* Adjust as needed */
+  width: 150px; /* Adjust as needed */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: 50% 100%; /* Adjust as needed */
   border-radius: 50%; /* This makes the image round */
-  box-shadow: 0px 5px 0px 3px black, 0 0 0 2px black;
+  box-shadow: 0 0 0 3px black;
+  margin-bottom: 3px;
 
 }
 
@@ -59,13 +56,75 @@
   background-color: red;
 }
 
-.btn-primary {
+.btn {
   border: none !important;
   box-shadow: 0 5px black, 0 0 0 2px black;
+  margin-bottom: 7px;
 }
 
-.btn-primary:hover {
+.btn:hover {
   box-shadow: 0 3px black, 0 0 0 2px black;
   transform: translateY(2px);
   transition: transform 50ms, box-shadow 0ms;
+}
+
+h1, h2, h3, h4, h5, p {
+  font-family: "Roboto", sans-serif;
+  color: #F9F4F5;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #F9F4F5;
+}
+
+h1.heading {
+  font-size: 3.5rem;
+  letter-spacing: -1.5px;
+}
+h2.heading {
+  font-size: 2.6rem;
+  letter-spacing: -0.9px;
+  line-height: 5rem;
+}
+h3.heading {
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+}
+h4.heading {
+  font-size: 1.5rem;
+  letter-spacing: -0.2px;
+}
+h5.heading {
+  font-size: 1.25rem;
+}
+h6.heading {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 15px;
+  color: #ddd;
+}
+
+.card {
+  border-width: 0;
+  background-color: transparent;
+  transition: background-color 300ms, box-shadow 300ms;
+}
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 2px 0 0 rgb(255, 255, 255, 0.1), 0 1px 4px 1px rgb(0 0 0 / 20%);
+  transition: background-color 300ms, box-shadow 300ms;
+}
+
+.badge {
+  background-color: black;
+  color: #FB6376
+}
+
+a {
+  text-decoration: none; /* Removes underline */
+  color: #ffffff; /* Change color to black */
+  font-weight: 600;
 }

@@ -8,15 +8,15 @@ export function Footer(props: IFooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto py-3 bg-light">
+    <footer className=" bg-dark">
       <Container>
         <Row>
-          <Col className="text-center">
+          <Col className="text-start">
             <p>© {currentYear} Your Name</p>
           </Col>
         </Row>
         <Row>
-          <Col className="text-center">
+          <Col className="text-start">
             <a href="https://www.linkedin.com/in/your-linkedin-profile/" target="_blank" rel="noreferrer">LinkedIn</a> | 
             <a href="https://github.com/your-github-profile" target="_blank" rel="noreferrer"> GitHub</a> | 
             <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noreferrer"> Twitter</a>

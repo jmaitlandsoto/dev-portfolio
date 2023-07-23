@@ -1,5 +1,5 @@
 export { HeroSection } from "./HeroSection";
-export { GameSection } from "./GameSection";
+export { Projects } from "./Projects";
 export { Experience } from "./Experience";
 export { Footer } from "./Footer";
 export { Header } from "./Header";
