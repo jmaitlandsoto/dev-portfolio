@@ -34,7 +34,7 @@ My journey into software began in 2019 at RP4K, where I discovered my passion fo
 
 ## Connect with Me
 
-- [LinkedIn](https://www.https://www.linkedin.com/in/josh-maitland/)
+- [LinkedIn](https://www.linkedin.com/in/josh-maitland/)
 - [GitHub](https://github.com/jmaitlandsoto)
 
 ## License
