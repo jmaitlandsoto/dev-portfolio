@@ -10,7 +10,16 @@ export const projects: Project[] = [
   {
     href: "https://trinket.io/pygame/d1a55c7216?outputOnly=true",
     title: "Algorithm Visualizer",
-    description: `I've always found those algorithm visualization videos on Youtube super satisfying to watch, so in an attempt to better grasp basic sorting algorithms I took a stab at coding them myself, but took it a step further and used Pygame to visualize them. I then figured out how to host the program on a website called trinket.io, so go on and check out the demo.`,
+    description: (
+      <p>
+        I've always found those algorithm visualization videos on Youtube super
+        satisfying to watch, so in an attempt to better grasp basic sorting
+        algorithms I took a stab at coding them myself, but took it a step
+        further and used Pygame to visualize them. I then figured out how to
+        host the program on a website called trinket.io, so go on and check out
+        the demo by clicking here.
+      </p>
+    ),
     techStack: ["Python", "Pygame"],
   },
 ];

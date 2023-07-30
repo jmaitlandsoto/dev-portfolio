@@ -105,6 +105,7 @@ h6.heading {
 p {
   font-size: 15px;
   color: #ddd;
+  font-weight: 500;
 }
 
 .card {
