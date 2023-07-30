@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9e8e7db8-de8f-4522-9457-9365b50f0ef5/deploy-status)](https://app.netlify.com/sites/admirable-fox-18b699/deploys)
 
-# My Portfolio Website
+# Josh Maitland's Portfolio [Website](https://joshmaitland.ca)
 
 ![Portfolio Screenshot](./src/assets/portfolio_screenshot.PNG)
 
@@ -35,7 +35,7 @@ My journey into software began in 2019 at RP4K, where I discovered my passion fo
 ## Connect with Me
 
 - [LinkedIn](https://www.https://www.linkedin.com/in/josh-maitland/)
-- [GitHub](https://https://github.com/jmaitlandsoto)
+- [GitHub](https://github.com/jmaitlandsoto)
 
 ## License
 
