@@ -2,7 +2,7 @@
 
 # My Portfolio Website
 
-![Portfolio Screenshot](./assets/portfolio_screenshot.png)
+![Portfolio Screenshot](./src/assets/portfolio_screenshot.PNG)
 
 ## Overview
 
