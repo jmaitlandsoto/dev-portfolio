@@ -32,7 +32,7 @@ export function ExperienceCard(props: IInfoCardProps) {
     <>
       <a
         href={href}
-        target="_blank"
+        target="_blank"        
         ref={linkRef} // Assign the linkRef to our link
       >
         <Card

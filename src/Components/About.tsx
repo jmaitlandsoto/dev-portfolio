@@ -1,10 +1,8 @@
-import { TextHeading } from "./TextHeading";
+import React from "react";
 
-export interface IAboutProps {}
-
-export function About(props: IAboutProps) {
+export const About = React.forwardRef<HTMLDivElement, React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>>((props, ref) => {
   return (
-    <section className="d-flex flex-column">
+    <section {...props} ref={ref} className="d-flex flex-column">
       <p>
         My journey into software began in 2019 at RP4K, where I discovered my
         passion for coding as an instructor all while pursuing my degree in
@@ -31,4 +29,4 @@ export function About(props: IAboutProps) {
       </p>
     </section>
   );
-}
+});
