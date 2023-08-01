@@ -26,6 +26,7 @@ export function ProjectCard(props: IProjectCardProps) {
       <a
         href={href}
         target="_blank"
+        rel="noreferrer"
         ref={linkRef} // Assign the linkRef to our link
       >
         <Card

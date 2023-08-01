@@ -14,7 +14,7 @@ export const About = React.forwardRef<HTMLDivElement, React.DetailedHTMLProps<Re
       <p>
         Currently, I'm an integral part of{" "}
         <a href="https://www.gibbly.co">Gibbly</a>, an edTech startup set to
-        revolutionize game-based learning. At Gibbly, I'vs had the privilege of
+        revolutionize game-based learning. At Gibbly, I've had the privilege of
         integrating OpenAI's API into our platform, providing me insights into
         prompt design and the power of GPT-4. Fascinated by artificial
         intelligence and machine learning since 2020, I now find myself on the

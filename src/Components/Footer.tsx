@@ -1,30 +1,29 @@
-import * as React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
-import portrait from "../assets/josh-portrait.jpg";
+import { Col, Container, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export interface IFooterProps {}
 
 export function Footer(props: IFooterProps) {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className=" bg-dark">
-      <Container>
-        <Row>
-          <Col className="text-start">
-            <p>© {currentYear} Your Name</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="text-start">
-            <a href="https://www.linkedin.com/in/your-linkedin-profile/" target="_blank" rel="noreferrer">LinkedIn</a> | 
-            <a href="https://github.com/your-github-profile" target="_blank" rel="noreferrer"> GitHub</a> | 
-            <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noreferrer"> Twitter</a>
-          </Col>
-        </Row>
-      </Container>
+    <footer className="d-flex flex-row gap-3">
+      <a
+        href="https://www.linkedin.com/in/josh-maitland/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FontAwesomeIcon icon={faLinkedin} size="2xl" />
+      </a>
+      <a
+        href="https://github.com/jmaitlandsoto"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FontAwesomeIcon icon={faGithub} size="2xl" />
+      </a>
     </footer>
   );
-};
+}
 
 export default Footer;
