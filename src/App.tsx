@@ -3,19 +3,12 @@ import { HeroSection, Experience, Footer, Projects } from "./Components";
 import { About } from "./Components/About";
 import React from "react";
 import { NavButton } from "./Components/NavButton";
+import NavSection from "./Components/NavSection";
 
 function App() {
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const experienceRef = React.useRef<HTMLDivElement>(null);
   const projectsRef = React.useRef<HTMLDivElement>(null);
-
-  function scrollToComponent(element: HTMLDivElement | null) {
-    if (element === null) return console.error("Element is null");
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
 
   return (
     <>
@@ -32,26 +25,11 @@ function App() {
             }}
           >
             <HeroSection />
-            <nav className="d-flex flex-column gap-3 align-items-start">
-              <NavButton
-                href="#about"
-                onClick={() => scrollToComponent(aboutRef.current)}
-              >
-                About
-              </NavButton>
-              <NavButton
-                href="#experience"
-                onClick={() => scrollToComponent(experienceRef.current)}
-              >
-                Experience
-              </NavButton>
-              <NavButton
-                href="#projects"
-                onClick={() => scrollToComponent(projectsRef.current)}
-              >
-                Projects
-              </NavButton>
-            </nav>
+            <NavSection
+              aboutRef={aboutRef}
+              experienceRef={experienceRef}
+              projectsRef={projectsRef}
+            />
             <Footer />
           </Col>
 

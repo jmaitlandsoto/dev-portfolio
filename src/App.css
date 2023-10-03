@@ -150,10 +150,10 @@ a {
   width: 50px;
   transition: width 300ms;
 }
-.nav-button .selected {
+.nav-button.selected {
   opacity: 1;
 }
-.nav-button:hover .selected .nav-indicator {
+.selected .nav-indicator {
   width: 50px;
   transition: width 300ms;
 }

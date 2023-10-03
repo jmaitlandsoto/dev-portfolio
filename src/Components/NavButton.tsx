@@ -4,31 +4,34 @@ export interface INavButtonProps {
   href: string;
   onClick: () => void;
   children?: React.ReactNode;
+  currentHash: string;
 }
 
 export function NavButton(props: INavButtonProps) {
-  const { href, onClick, children } = props;
+  const { href, onClick, children, currentHash } = props;
 
-  const [currentHash, setCurrentHash] = React.useState(window.location.hash);
+
+
+  const isHash = React.useCallback(
+    (hash: string) => currentHash === hash,
+    [currentHash]
+  );
 
   React.useEffect(() => {
-    const handleHashChange = () => setCurrentHash(window.location.hash);
-
-    // Listen for hash changes
-    window.addEventListener("hashchange", handleHashChange);
-
-    // Cleanup after unmount
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
-
-  const isHash = (hash: string) => currentHash === hash;
+    console.log(isHash(href))
+    // if (isHash(href)) {
+    //   onClick();
+    // }
+  }, [isHash, href, currentHash]);
 
   return (
-    <div className={"d-flex flex-row align-items-center nav-button"}>
+    <a
+      href={href}
+      onClick={onClick}
+      className={"d-flex flex-row align-items-center nav-button " + (isHash(href) ? "selected" : "")}
+    >
       <span className={"nav-indicator"}></span>
-      <a href={href} onClick={onClick}>
-        {children}
-      </a>
-    </div>
+      <>{children}</>
+    </a>
   );
 }
