@@ -4,6 +4,7 @@ import { About } from "./Components/About";
 import React from "react";
 import { NavButton } from "./Components/NavButton";
 import NavSection from "./Components/NavSection";
+import CursorFollower from "./Components/CursorFollower";
 
 function App() {
   const aboutRef = React.useRef<HTMLDivElement>(null);
@@ -13,7 +14,8 @@ function App() {
   return (
     <>
       {/* <Header /> */}
-      <Container>
+      {/* <CursorFollower /> */}
+      <Container className="d=relative">
         <Row className="gap-5">
           <Col
             lg={{ offset: 1, span: 4 }}

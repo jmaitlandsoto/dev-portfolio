@@ -157,3 +157,15 @@ a {
   width: 50px;
   transition: width 300ms;
 }
+
+#container {
+  position: relative;
+}
+
+#gradient-box {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(24, 52, 83, 0.4), rgba(24, 52, 83, 0.02), rgba(24, 52, 83,0));
+}
