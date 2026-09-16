@@ -13,10 +13,11 @@ export function HeroSection(props: IHeroSectionProps) {
           <Col lg={12} className="d-flex flex-column  gap-4" >
             <TextHeading level={1}>Josh Maitland</TextHeading>
             <TextHeading level={4}>
-              Lead Engineer at Gibbly Inc.
+              Full-Stack Software Engineer
             </TextHeading>
             <p className="mb-4">
-              Creating immersive learning experiences with AI-powered web platforms and game development.
+              Building distributed systems, AI agents, and production APIs — from
+              architecture through CI/CD delivery. Based in Toronto, ON.
             </p>
             <img src={portrait} alt="Hero" className="hero-image" />
           </Col>

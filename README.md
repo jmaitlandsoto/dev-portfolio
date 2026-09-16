@@ -6,21 +6,28 @@
 
 ## Overview
 
-This repository contains the source code for my portfolio website. I'm currently a Lead Engineer at Gibbly Inc., where I create immersive learning experiences with AI-powered web platforms and game development.
+This repository contains the source code for my portfolio website. I'm a full-stack software engineer based in Toronto, currently building distributed systems at Iceberg Cyber and co-founding Gibbly, an AI edtech platform.
 
 ## About Me
 
-My journey into software began in 2019 at RP4K, where I discovered my passion for coding as an instructor while pursuing my degree in Electrical Engineering at TMU. Currently, I'm an integral part of Gibbly, an edTech startup set to revolutionize game-based learning. Beyond work, I'm an avid 3D printing hobbyist, an ADHDer who loves long walks with my fiancé, and a proud dog father to our two puppers, Luna and Hunny. I also freelance, continuously seeking new challenges to broaden my horizons in the dynamic world of software and AI.
+My journey into software began in 2020 as a coding instructor at RP4K, while pursuing my degree in Electrical Engineering at TMU. From there I led game development at Ripple Studios before landing at Gibbly, an edTech startup I co-founded, and Iceberg Cyber, where I architect distributed, event-driven systems on AWS. Beyond work, I'm an avid 3D printing hobbyist, an ADHDer who loves long walks with my fiancé, and a proud dog father to our two puppers, Luna and Hunny. I also volunteer as a certified Judge Advisor for VEX Robotics competitions.
 
 ## Experience
 
-- **Lead Developer - Gibbly** (Dec 2022 - Present)
-  - As a full stack developer, I've been instrumental in the development of Gibbly, an innovative education platform that accelerates course material creation. Gibbly utilizes AI to revolutionize game-based learning, providing a unique and effective learning experience.
-  - Tech Stack: React, Javascript, Typescript, AWS
+- **Full Stack Developer - Iceberg Cyber** (June 2024 - Present)
+  - Architecting distributed, event-driven systems on AWS (CDK, Lambda, SQS, RDS, DynamoDB), including RBAC for multi-tenant client isolation and CI/CD pipelines.
+  - Tech Stack: TypeScript, Node.js, AWS CDK, Lambda, DynamoDB, Bitbucket Pipelines
 
-- **Lead Developer - Ripple Studios** (May 2021 - Sept 2022)
-  - As a full stack developer, I've been instrumental in the development of educational mobile games that inspire kids to pursue STEM careers.
-  - Tech Stack: C#, Unity
+- **Technical Co-Founder - Gibbly** (Dec 2022 - Present)
+  - Sole developer for an AI edtech platform serving ~36,000 users, building agentic AI automation, LLM evaluation, and guardrails on the OpenAI API.
+  - Tech Stack: React, TypeScript, OpenAI API, GraphQL, AWS, PostHog
+
+- **Lead Game Developer - Ripple Studios** (May 2021 - Oct 2022)
+  - Instrumental in the development of educational mobile games that inspire kids to pursue STEM careers.
+  - Tech Stack: C#, .NET, Unity
+
+- **Coding Instructor - Real Programming 4 Kids** (Jan 2020 - Aug 2021)
+  - Taught and mentored 100+ students in Python, Java, C#, C++, and Visual Basic.
 
 ## Projects
 

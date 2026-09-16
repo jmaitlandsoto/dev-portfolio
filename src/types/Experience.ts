@@ -3,7 +3,8 @@ export interface Experience {
     position: string
     startDate: string
     endDate: string
-    description: string
+    summary?: string
+    highlights: string[]
     techStack: string[]
     href?: string
 }
