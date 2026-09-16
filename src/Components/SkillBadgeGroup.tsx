@@ -9,7 +9,7 @@ export interface ISkillBadgeGroupProps {
 export function SkillBadgeGroup(props: ISkillBadgeGroupProps) {
   const { skills } = props;
   return (
-    <div className="d-flex flex-row gap-2">
+    <div className="d-flex flex-row flex-wrap gap-2">
       {skills.map((skill: string, i: number) => (
         <SkillBadge key={i}>{skill}</SkillBadge>
       ))}
