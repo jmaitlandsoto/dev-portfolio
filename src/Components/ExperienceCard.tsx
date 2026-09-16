@@ -29,26 +29,24 @@ export function ExperienceCard(props: IInfoCardProps) {
         padding: "1.5rem",
       }}
     >
-      <div className="d-flex flex-row">
-        <div style={{ width: "650px" }}>
-          <p>
-            {startDate} - {endDate}
-          </p>
-        </div>
-        <div>
-          <TextHeading level={5}>
-            {position} - {company}
-          </TextHeading>
-          {summary && <p>{summary}</p>}
-          <ul className="ps-3 mb-2">
-            {highlights.map((highlight, i) => (
-              <li key={i} className="mb-1">
-                <p className="mb-0 d-inline">{highlight}</p>
-              </li>
-            ))}
-          </ul>
-          <SkillBadgeGroup skills={techStack} />
-        </div>
+      <div className="d-flex flex-column">
+        {/* <div style={{ width: "650px" }}> */}
+        <p>
+          {startDate} - {endDate}
+        </p>
+        {/* </div> */}
+        <TextHeading level={5}>
+          {position} - {company}
+        </TextHeading>
+        {summary && <p>{summary}</p>}
+        <ul className="ps-3 mb-2">
+          {highlights.map((highlight, i) => (
+            <li key={i} className="mb-1">
+              <p className="mb-0 d-inline ">{highlight}</p>
+            </li>
+          ))}
+        </ul>
+        <SkillBadgeGroup skills={techStack} />
       </div>
     </Card>
   );
