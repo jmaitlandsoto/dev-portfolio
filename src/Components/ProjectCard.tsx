@@ -1,10 +1,10 @@
 import * as React from "react";
-import { Card } from "react-bootstrap";
+import { Card } from "@/components/ui/card";
 import { SkillBadgeGroup } from "./SkillBadgeGroup";
 import { TextHeading } from "./TextHeading";
-import { Experience } from "../types/Experience";
 import { useRef } from "react";
 import { Project } from "../types/Project";
+import { GlassCard } from "./GlassCard";
 
 export interface IProjectCardProps {
   project: Project;
@@ -29,14 +29,18 @@ export function ProjectCard(props: IProjectCardProps) {
         rel="noreferrer"
         ref={linkRef} // Assign the linkRef to our link
       >
-        <Card
-          className="d-flex flex-column gap-1"
-          style={{ marginLeft: "-1.5rem" , marginRight: "-1.5rem", padding: "1.5rem" }}
+        <GlassCard
+          className="flex flex-col gap-4"
+          style={{
+            marginLeft: "-1.5rem",
+            marginRight: "-1.5rem",
+            padding: "1.5rem",
+          }}
         >
           <TextHeading level={5}>{title}</TextHeading>
           <p>{description}</p>
           <SkillBadgeGroup skills={techStack} />
-        </Card>
+        </GlassCard>
       </a>
     </>
   );

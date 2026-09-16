@@ -2,7 +2,7 @@ import React from "react";
 
 export const About = React.forwardRef<HTMLDivElement, React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>>((props, ref) => {
   return (
-    <section {...props} ref={ref} className="d-flex flex-column">
+    <section {...props} ref={ref} className="flex flex-col">
       <p>
         I'm a full-stack software engineer based in Toronto with 5+ years
         building production APIs, backend systems, and frontend applications

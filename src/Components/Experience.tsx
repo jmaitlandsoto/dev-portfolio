@@ -1,6 +1,4 @@
-import { Badge, Card } from "react-bootstrap";
 import { TextHeading } from "./TextHeading";
-import { SkillBadgeGroup } from "./SkillBadgeGroup";
 import { ExperienceCard } from "./ExperienceCard";
 import { experience } from "../data/experience";
 import React from "react";
@@ -13,7 +11,7 @@ export const Experience = React.forwardRef<HTMLDivElement, React.DetailedHTMLPro
       <TextHeading level={2}>Experience</TextHeading>
       <ol className="p-0" style={{ listStyle: "none" }}>
         {experience.map((exp, i) => (
-          <li key={i} className="mb-5">
+          <li key={i} className="mb-12">
             <ExperienceCard experience={exp} />
           </li>
         ))}

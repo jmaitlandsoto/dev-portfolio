@@ -21,7 +21,7 @@ export function NavButton(props: INavButtonProps) {
     <a
       href={href}
       onClick={onClick}
-      className={"d-flex flex-row align-items-center nav-button " + (isHash(href) ? "selected" : "")}
+      className={"flex flex-row items-center nav-button " + (isHash(href) ? "selected" : "")}
     >
       <span className={"nav-indicator"}></span>
       <>{children}</>

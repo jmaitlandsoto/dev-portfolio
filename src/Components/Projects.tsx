@@ -11,7 +11,7 @@ export const Projects = React.forwardRef<HTMLDivElement, React.DetailedHTMLProps
       <TextHeading level={2}>Projects</TextHeading>
       <ol className="p-0" style={{ listStyle: "none" }}>
         {projects.map((project, i) => (
-          <li key={i} className="mb-5">
+          <li key={i} className="mb-12">
             <ProjectCard project={project} />
           </li>
         ))}

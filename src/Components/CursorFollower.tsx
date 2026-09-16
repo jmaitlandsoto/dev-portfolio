@@ -6,17 +6,34 @@ export default function CursorFollower(props: ICursorFollowerProps) {
   React.useEffect(() => {
     const gradientBox = document.getElementById("gradient-box");
 
-    const moveGradientBox = (e: MouseEvent) => {
-      if (gradientBox) {
-        gradientBox.style.left = `${e.clientX - 300}px`; // 50 is half the width and height of the box
-        gradientBox.style.top = `${e.clientY - 300}px`;
-      }
+    let targetX = 0,
+      targetY = 0;
+    let currentX = 0,
+      currentY = 0;
+    let rafId: number;
+    const LERP = 0.2;
+
+    const onMouseMove = (e: MouseEvent) => {
+      targetX = e.clientX - 300;
+      targetY = e.clientY - 300;
     };
 
-    window.addEventListener("mousemove", moveGradientBox);
+    const tick = () => {
+      currentX += (targetX - currentX) * LERP;
+      currentY += (targetY - currentY) * LERP;
+      if (gradientBox) {
+        gradientBox.style.left = `${currentX}px`;
+        gradientBox.style.top = `${currentY}px`;
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+
+    window.addEventListener("mousemove", onMouseMove);
+    rafId = requestAnimationFrame(tick);
 
     return () => {
-      window.removeEventListener("mousemove", moveGradientBox);
+      window.removeEventListener("mousemove", onMouseMove);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 

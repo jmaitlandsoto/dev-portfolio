@@ -1,5 +1,4 @@
 import * as React from "react";
-import Badge from "react-bootstrap/esm/Badge";
 import { SkillBadge } from "./SkillBadge";
 
 export interface ISkillBadgeGroupProps {
@@ -9,7 +8,7 @@ export interface ISkillBadgeGroupProps {
 export function SkillBadgeGroup(props: ISkillBadgeGroupProps) {
   const { skills } = props;
   return (
-    <div className="d-flex flex-row flex-wrap gap-2">
+    <div className="flex flex-row flex-wrap gap-2">
       {skills.map((skill: string, i: number) => (
         <SkillBadge key={i}>{skill}</SkillBadge>
       ))}

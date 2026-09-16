@@ -1,5 +1,10 @@
-import { Col, Container, Row } from "react-bootstrap";
-import { HeroSection, Experience, Footer, Projects, Skills } from "./Components";
+import {
+  HeroSection,
+  Experience,
+  Footer,
+  Projects,
+  Skills,
+} from "./Components";
 import { About } from "./Components/About";
 import React from "react";
 import NavSection from "./Components/NavSection";
@@ -14,17 +19,9 @@ function App() {
   return (
     <>
       <CursorFollower />
-      <Container className="position-relative">
-        <Row className="gap-5">
-          <Col
-            lg={{ offset: 1, span: 4 }}
-            className="d-flex flex-column position-sticky justify-content-between overflow-none top-0"
-            style={{
-              height: "100dvh",
-              paddingTop: "6rem",
-              paddingBottom: "6rem",
-            }}
-          >
+      <div className="relative max-w-screen-xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+          <div className="w-full md:w-5/12 md:ml-[8.333%] md:sticky md:top-0 md:h-[100dvh] flex flex-col justify-between md:overflow-hidden gap-6 pt-8 pb-4 md:pt-24 md:pb-24">
             <HeroSection />
             <NavSection
               aboutRef={aboutRef}
@@ -33,18 +30,18 @@ function App() {
               projectsRef={projectsRef}
             />
             <Footer />
-          </Col>
+          </div>
 
-          <Col lg={5}>
-            <main className="d-flex flex-column gap-1">
+          <div className="flex-1 p-1">
+            <main className="flex flex-col gap-1">
               <About ref={aboutRef} style={{ paddingTop: "6rem" }} />
               <Experience ref={experienceRef} style={{ paddingTop: "6rem" }} />
               <Skills ref={skillsRef} style={{ paddingTop: "6rem" }} />
               <Projects ref={projectsRef} style={{ paddingTop: "6rem" }} />
             </main>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

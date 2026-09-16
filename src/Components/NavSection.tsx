@@ -32,7 +32,12 @@ export default function NavSection(props: INavSectionProps) {
       const skillsSection = skillsRef.current;
       const projectsSection = projectsRef.current;
 
-      if (aboutSection && experienceSection && skillsSection && projectsSection) {
+      if (
+        aboutSection &&
+        experienceSection &&
+        skillsSection &&
+        projectsSection
+      ) {
         const aboutRect = aboutSection.getBoundingClientRect();
         const experienceRect = experienceSection.getBoundingClientRect();
         const skillsRect = skillsSection.getBoundingClientRect();
@@ -68,7 +73,7 @@ export default function NavSection(props: INavSectionProps) {
   }
 
   return (
-    <nav className="d-flex flex-column gap-3 align-items-start">
+    <nav className="flex flex-row flex-wrap gap-x-6 gap-y-2 md:flex-col md:gap-4 items-start align-start">
       <NavButton
         href="#about"
         currentHash={currentHash}

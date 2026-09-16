@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card } from "react-bootstrap";
+import { GlassCard } from "./GlassCard";
 import { SkillBadgeGroup } from "./SkillBadgeGroup";
 import { TextHeading } from "./TextHeading";
 import { Experience } from "../types/Experience";
@@ -21,34 +21,34 @@ export function ExperienceCard(props: IInfoCardProps) {
   } = props.experience;
 
   const cardBody = (
-    <Card
-      className="d-flex flex-column gap-1"
+    <GlassCard
+      className="flex flex-col gap-1"
       style={{
         marginLeft: "-1.5rem",
         marginRight: "-1.5rem",
         padding: "1.5rem",
       }}
     >
-      <div className="d-flex flex-column">
-        {/* <div style={{ width: "650px" }}> */}
-        <p>
-          {startDate} - {endDate}
-        </p>
-        {/* </div> */}
-        <TextHeading level={5}>
-          {position} - {company}
-        </TextHeading>
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
+          <TextHeading level={5}>
+            {position} - {company}
+          </TextHeading>
+          <p>
+            {startDate} - {endDate}
+          </p>
+        </div>
         {summary && <p>{summary}</p>}
-        <ul className="ps-3 mb-2">
+        <ul className="pl-4 list-disc">
           {highlights.map((highlight, i) => (
             <li key={i} className="mb-1">
-              <p className="mb-0 d-inline ">{highlight}</p>
+              <p className="mb-0 inline">{highlight}</p>
             </li>
           ))}
         </ul>
         <SkillBadgeGroup skills={techStack} />
       </div>
-    </Card>
+    </GlassCard>
   );
 
   if (!href) {
