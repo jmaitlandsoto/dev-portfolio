@@ -1,21 +1,20 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
-import { HeroSection, Experience, Footer, Projects } from "./Components";
+import { Col, Container, Row } from "react-bootstrap";
+import { HeroSection, Experience, Footer, Projects, Skills } from "./Components";
 import { About } from "./Components/About";
 import React from "react";
-import { NavButton } from "./Components/NavButton";
 import NavSection from "./Components/NavSection";
 import CursorFollower from "./Components/CursorFollower";
 
 function App() {
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const experienceRef = React.useRef<HTMLDivElement>(null);
+  const skillsRef = React.useRef<HTMLDivElement>(null);
   const projectsRef = React.useRef<HTMLDivElement>(null);
 
   return (
     <>
-      {/* <Header /> */}
-      {/* <CursorFollower /> */}
-      <Container className="d=relative">
+      <CursorFollower />
+      <Container className="position-relative">
         <Row className="gap-5">
           <Col
             lg={{ offset: 1, span: 4 }}
@@ -30,6 +29,7 @@ function App() {
             <NavSection
               aboutRef={aboutRef}
               experienceRef={experienceRef}
+              skillsRef={skillsRef}
               projectsRef={projectsRef}
             />
             <Footer />
@@ -39,6 +39,7 @@ function App() {
             <main className="d-flex flex-column gap-1">
               <About ref={aboutRef} style={{ paddingTop: "6rem" }} />
               <Experience ref={experienceRef} style={{ paddingTop: "6rem" }} />
+              <Skills ref={skillsRef} style={{ paddingTop: "6rem" }} />
               <Projects ref={projectsRef} style={{ paddingTop: "6rem" }} />
             </main>
           </Col>

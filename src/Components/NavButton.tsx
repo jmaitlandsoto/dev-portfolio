@@ -17,13 +17,6 @@ export function NavButton(props: INavButtonProps) {
     [currentHash]
   );
 
-  React.useEffect(() => {
-    console.log(isHash(href))
-    // if (isHash(href)) {
-    //   onClick();
-    // }
-  }, [isHash, href, currentHash]);
-
   return (
     <a
       href={href}

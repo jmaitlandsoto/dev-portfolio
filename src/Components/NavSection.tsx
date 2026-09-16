@@ -4,11 +4,12 @@ import { NavButton } from "./NavButton";
 export interface INavSectionProps {
   aboutRef: React.RefObject<HTMLDivElement>;
   experienceRef: React.RefObject<HTMLDivElement>;
+  skillsRef: React.RefObject<HTMLDivElement>;
   projectsRef: React.RefObject<HTMLDivElement>;
 }
 
 export default function NavSection(props: INavSectionProps) {
-  const { aboutRef, experienceRef, projectsRef } = props;
+  const { aboutRef, experienceRef, skillsRef, projectsRef } = props;
 
   const [currentHash, setCurrentHash] = React.useState(window.location.hash);
 
@@ -27,18 +28,20 @@ export default function NavSection(props: INavSectionProps) {
   React.useEffect(() => {
     const handleScroll = () => {
       const aboutSection = aboutRef.current;
-      const projectsSection = projectsRef.current;
       const experienceSection = experienceRef.current;
+      const skillsSection = skillsRef.current;
+      const projectsSection = projectsRef.current;
 
-      if (aboutSection && projectsSection && experienceSection) {
+      if (aboutSection && experienceSection && skillsSection && projectsSection) {
         const aboutRect = aboutSection.getBoundingClientRect();
-        const projectsRect = projectsSection.getBoundingClientRect();
         const experienceRect = experienceSection.getBoundingClientRect();
-
-        console.log(experienceRect.top);
+        const skillsRect = skillsSection.getBoundingClientRect();
+        const projectsRect = projectsSection.getBoundingClientRect();
 
         if (projectsRect.top <= 100) {
           window.location.hash = "#projects";
+        } else if (skillsRect.top <= 100) {
+          window.location.hash = "#skills";
         } else if (experienceRect.top <= 100) {
           window.location.hash = "#experience";
         } else if (aboutRect.top <= 100) {
@@ -79,6 +82,13 @@ export default function NavSection(props: INavSectionProps) {
         onClick={() => scrollToComponent(experienceRef.current)}
       >
         Experience
+      </NavButton>
+      <NavButton
+        href="#skills"
+        currentHash={currentHash}
+        onClick={() => scrollToComponent(skillsRef.current)}
+      >
+        Skills
       </NavButton>
       <NavButton
         href="#projects"
