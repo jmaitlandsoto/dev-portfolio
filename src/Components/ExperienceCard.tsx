@@ -32,34 +32,36 @@ export function ExperienceCard(props: IInfoCardProps) {
     <>
       <a
         href={href}
-        target="_blank"   
-        rel="noreferrer"     
+        target="_blank"
+        rel="noreferrer"
         ref={linkRef} // Assign the linkRef to our link
       >
         <Card
           className="d-flex flex-column gap-1"
-          style={{ marginLeft: "-1.5rem" , marginRight: "-1.5rem", padding: "1.5rem" }}
+          style={{
+            marginLeft: "-1.5rem",
+            marginRight: "-1.5rem",
+            padding: "1.5rem",
+          }}
         >
-          <div className="d-flex flex-row">
+          <div className="d-flex flex-column">
             <div style={{ width: "650px" }}>
               <p>
                 {startDate} - {endDate}
               </p>
             </div>
-            <div>
-              <TextHeading level={5}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  ref={linkRef} // Assign the linkRef to our link
-                >
-                  {position} - {company}
-                </a>
-              </TextHeading>
-              <p>{description}</p>
-              <SkillBadgeGroup skills={techStack} />
-            </div>
+            <TextHeading level={5}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                ref={linkRef} // Assign the linkRef to our link
+              >
+                {position} - {company}
+              </a>
+            </TextHeading>
+            <p>{description}</p>
+            <SkillBadgeGroup skills={techStack} />
           </div>
         </Card>
       </a>
