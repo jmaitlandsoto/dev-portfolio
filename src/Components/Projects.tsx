@@ -12,6 +12,7 @@ export const Projects = React.forwardRef<HTMLDivElement, MotionSectionProps>((pr
     <motion.section
       {...props}
       ref={ref}
+      className="flex flex-col gap-6"
       variants={fadeInUp}
       initial="hidden"
       whileInView="show"

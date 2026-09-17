@@ -10,7 +10,7 @@ export const About = React.forwardRef<HTMLDivElement, MotionSectionProps>((props
     <motion.section
       {...props}
       ref={ref}
-      className="flex flex-col"
+      className="flex flex-col gap-4"
       variants={fadeInUp}
       initial="hidden"
       whileInView="show"

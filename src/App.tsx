@@ -24,9 +24,9 @@ function App() {
       <React.Suspense fallback={null}>
         <ParticleBackground />
       </React.Suspense>
-      <div className="relative max-w-screen-xl mx-auto p-6 py-8 md:py-24">
-        <div className="flex flex-col md:flex-row gap-18 md:gap-12">
-          <div className="p-1 w-full md:w-5/12 md:ml-[8.333%] md:sticky md:top-24 md:h-[100dvh] flex flex-col justify-start md:overflow-hidden gap-12 ">
+      <div className="relative max-w-screen-xl mx-auto px-6 py-8 md:py-24">
+        <div className="flex flex-col md:flex-row gap-12">
+          <div className="w-full md:w-5/12 md:ml-[8.333%] md:sticky md:top-24 md:h-[100dvh] flex flex-col justify-start md:overflow-hidden gap-12 ">
             <HeroSection />
             <NavSection
               aboutRef={aboutRef}
@@ -37,8 +37,8 @@ function App() {
             <Footer />
           </div>
 
-          <div className="flex-1 p-1">
-            <main className="flex flex-col gap-18">
+          <div className="flex-1">
+            <main className="flex flex-col gap-12">
               <About ref={aboutRef} />
               <Experience ref={experienceRef} />
               <Skills ref={skillsRef} />
