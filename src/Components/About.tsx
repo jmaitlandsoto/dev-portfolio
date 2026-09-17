@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { fadeInUp, MotionSectionProps } from "./motion/variants";
 
-export const About = React.forwardRef<HTMLDivElement, React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>>((props, ref) => {
+export const About = React.forwardRef<HTMLDivElement, MotionSectionProps>((props, ref) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section {...props} ref={ref} className="flex flex-col">
+    <motion.section
+      {...props}
+      ref={ref}
+      className="flex flex-col"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+    >
       <p>
         I'm a full-stack software engineer based in Toronto with 5+ years
         building production APIs, backend systems, and frontend applications
@@ -27,14 +37,25 @@ export const About = React.forwardRef<HTMLDivElement, React.DetailedHTMLProps<Re
         game development at Ripple Studios.
       </p>
 
-      {expanded && (
-        <p className="mt-4">
-          Outside of work, I'm a die-hard Blue Jays fan. I'm also a carpentry
-          hobbyist and a lifelong lover of video games, and I play softball
-          and volleyball to stay active. When I'm not building something, I'm
-          usually travelling or camping with my wife and son.
-        </p>
-      )}
+      <AnimatePresence initial={false}>
+        {expanded && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            style={{ overflow: "hidden" }}
+          >
+            <p className="mt-4">
+              Outside of work, I'm a die-hard Blue Jays fan. I'm also a
+              carpentry hobbyist and a lifelong lover of video games, and I
+              play softball and volleyball to stay active. When I'm not
+              building something, I'm usually travelling or camping with my
+              wife and son.
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <a
         href="#"
@@ -50,6 +71,6 @@ export const About = React.forwardRef<HTMLDivElement, React.DetailedHTMLProps<Re
           className={`size-4 transition-transform ${expanded ? "rotate-180" : ""}`}
         />
       </a>
-    </section>
+    </motion.section>
   );
 });

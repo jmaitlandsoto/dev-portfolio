@@ -1,5 +1,7 @@
 import * as React from "react";
 import { SkillBadge } from "./SkillBadge";
+import { StaggerGroup } from "./motion/StaggerGroup";
+import { StaggerItem } from "./motion/StaggerItem";
 
 export interface ISkillBadgeGroupProps {
   skills: string[];
@@ -8,10 +10,12 @@ export interface ISkillBadgeGroupProps {
 export function SkillBadgeGroup(props: ISkillBadgeGroupProps) {
   const { skills } = props;
   return (
-    <div className="flex flex-row flex-wrap gap-2">
+    <StaggerGroup className="flex flex-row flex-wrap gap-2" amount={0.4}>
       {skills.map((skill: string, i: number) => (
-        <SkillBadge key={i}>{skill}</SkillBadge>
+        <StaggerItem as="span" key={i}>
+          <SkillBadge>{skill}</SkillBadge>
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerGroup>
   );
 }

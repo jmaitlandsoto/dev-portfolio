@@ -5,6 +5,7 @@ export interface ICursorFollowerProps {}
 export default function CursorFollower(props: ICursorFollowerProps) {
   React.useEffect(() => {
     if (window.matchMedia("(hover: none)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const gradientBox = document.getElementById("gradient-box");
 
