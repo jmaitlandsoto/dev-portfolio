@@ -23,5 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
+.claude/
+.docs/
 .superpowers/
 .worktrees/

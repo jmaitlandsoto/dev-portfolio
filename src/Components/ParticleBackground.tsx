@@ -11,12 +11,18 @@ import {
   LINE_OPACITY,
   POINT_COLOR,
   LINE_COLOR,
+  POINT_COLOR_LIGHT,
+  LINE_COLOR_LIGHT,
   PARALLAX_LERP,
   FIELD_WIDTH,
   FIELD_HEIGHT,
   FIELD_DEPTH,
   DRIFT_SPEED,
 } from "./particle/constants";
+
+function isDarkTheme() {
+  return document.documentElement.classList.contains("dark");
+}
 
 export default function ParticleBackground() {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
@@ -64,10 +70,12 @@ export default function ParticleBackground() {
 
       scene = new THREE.Scene();
 
+      const dark = isDarkTheme();
+
       pointsGeometry = new THREE.BufferGeometry();
       pointsGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
       pointsMaterial = new THREE.PointsMaterial({
-        color: POINT_COLOR,
+        color: dark ? POINT_COLOR : POINT_COLOR_LIGHT,
         size: POINT_SIZE,
         transparent: true,
         opacity: POINT_OPACITY,
@@ -77,7 +85,7 @@ export default function ParticleBackground() {
 
       lineGeometry = new THREE.BufferGeometry();
       lineMaterial = new THREE.LineBasicMaterial({
-        color: LINE_COLOR,
+        color: dark ? LINE_COLOR : LINE_COLOR_LIGHT,
         transparent: true,
         opacity: LINE_OPACITY,
       });
@@ -86,6 +94,17 @@ export default function ParticleBackground() {
     } catch {
       return;
     }
+
+    const themeObserver = new MutationObserver(() => {
+      const dark = isDarkTheme();
+      pointsMaterial.color.setHex(dark ? POINT_COLOR : POINT_COLOR_LIGHT);
+      lineMaterial.color.setHex(dark ? LINE_COLOR : LINE_COLOR_LIGHT);
+      if (isCoarsePointer()) renderFrame();
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
     function resize() {
       renderer.setSize(window.innerWidth, window.innerHeight, false);
@@ -120,6 +139,7 @@ export default function ParticleBackground() {
       window.addEventListener("resize", onStaticResize);
 
       return () => {
+        themeObserver.disconnect();
         window.removeEventListener("resize", onStaticResize);
         pointsGeometry.dispose();
         lineGeometry.dispose();
@@ -178,6 +198,7 @@ export default function ParticleBackground() {
     rafId = requestAnimationFrame(tick);
 
     return () => {
+      themeObserver.disconnect();
       cancelAnimationFrame(rafId);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("scroll", onScroll);

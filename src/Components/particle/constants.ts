@@ -12,6 +12,11 @@ export const LINE_OPACITY = 0.5;
 export const POINT_COLOR = 0xc8e2ff;
 export const LINE_COLOR = 0x183453;
 
+// Light-theme equivalents: darker point color keeps dots visible against
+// the near-white background; pale line color keeps the mesh subtle.
+export const POINT_COLOR_LIGHT = 0x4a6fa5;
+export const LINE_COLOR_LIGHT = 0xcfe0f3;
+
 export const PARALLAX_LERP = 0.08;
 
 export const FIELD_WIDTH = 14;
