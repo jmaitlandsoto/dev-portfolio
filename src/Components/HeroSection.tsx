@@ -6,8 +6,8 @@ export interface IHeroSectionProps {}
 
 export function HeroSection(props: IHeroSectionProps) {
   return (
-    <section className="hero-section">
-      <div className="flex flex-col gap-6">
+    <section>
+      <div className="flex flex-col gap-8">
         <TextHeading level={1}>Josh Maitland</TextHeading>
         <TextHeading level={4}>Full-Stack Software Engineer</TextHeading>
         <p>

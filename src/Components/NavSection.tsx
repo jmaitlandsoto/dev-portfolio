@@ -73,7 +73,7 @@ export default function NavSection(props: INavSectionProps) {
   }
 
   return (
-    <nav className="flex flex-row flex-wrap gap-x-6 gap-y-2 md:flex-col md:gap-4 items-start align-start">
+    <nav className="flex flex-row flex-wrap gap-x-6 gap-y-2 md:flex-col md:gap-4 items-start ">
       <NavButton
         href="#about"
         currentHash={currentHash}
