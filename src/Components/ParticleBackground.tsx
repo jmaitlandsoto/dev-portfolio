@@ -27,19 +27,6 @@ export default function ParticleBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-    const camera = new THREE.PerspectiveCamera(
-      50,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      100
-    );
-    camera.position.z = 8;
-
-    const scene = new THREE.Scene();
-
     const boundX = FIELD_WIDTH / 2;
     const boundY = FIELD_HEIGHT / 2;
 
@@ -55,25 +42,50 @@ export default function ParticleBackground() {
       ]);
     }
 
-    const pointsGeometry = new THREE.BufferGeometry();
-    pointsGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    const pointsMaterial = new THREE.PointsMaterial({
-      color: POINT_COLOR,
-      size: POINT_SIZE,
-      transparent: true,
-      opacity: POINT_OPACITY,
-    });
-    const points = new THREE.Points(pointsGeometry, pointsMaterial);
-    scene.add(points);
+    let renderer: THREE.WebGLRenderer;
+    let camera: THREE.PerspectiveCamera;
+    let scene: THREE.Scene;
+    let pointsGeometry: THREE.BufferGeometry;
+    let pointsMaterial: THREE.PointsMaterial;
+    let lineGeometry: THREE.BufferGeometry;
+    let lineMaterial: THREE.LineBasicMaterial;
 
-    const lineGeometry = new THREE.BufferGeometry();
-    const lineMaterial = new THREE.LineBasicMaterial({
-      color: LINE_COLOR,
-      transparent: true,
-      opacity: LINE_OPACITY,
-    });
-    const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
-    scene.add(lines);
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      camera = new THREE.PerspectiveCamera(
+        50,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        100
+      );
+      camera.position.z = 8;
+
+      scene = new THREE.Scene();
+
+      pointsGeometry = new THREE.BufferGeometry();
+      pointsGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+      pointsMaterial = new THREE.PointsMaterial({
+        color: POINT_COLOR,
+        size: POINT_SIZE,
+        transparent: true,
+        opacity: POINT_OPACITY,
+      });
+      const points = new THREE.Points(pointsGeometry, pointsMaterial);
+      scene.add(points);
+
+      lineGeometry = new THREE.BufferGeometry();
+      lineMaterial = new THREE.LineBasicMaterial({
+        color: LINE_COLOR,
+        transparent: true,
+        opacity: LINE_OPACITY,
+      });
+      const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+      scene.add(lines);
+    } catch {
+      return;
+    }
 
     function resize() {
       renderer.setSize(window.innerWidth, window.innerHeight, false);
