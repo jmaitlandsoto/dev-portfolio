@@ -5,6 +5,7 @@ import { TextHeading } from "./TextHeading";
 import { useRef } from "react";
 import { Project } from "../types/Project";
 import { GlassCard } from "./GlassCard";
+import { Tilt } from "./motion";
 
 export interface IProjectCardProps {
   project: Project;
@@ -29,18 +30,13 @@ export function ProjectCard(props: IProjectCardProps) {
         rel="noreferrer"
         ref={linkRef} // Assign the linkRef to our link
       >
-        <GlassCard
-          className="flex flex-col gap-4"
-          style={{
-            marginLeft: "-1.5rem",
-            marginRight: "-1.5rem",
-            padding: "1.5rem",
-          }}
-        >
-          <TextHeading level={5}>{title}</TextHeading>
-          <p>{description}</p>
-          <SkillBadgeGroup skills={techStack} />
-        </GlassCard>
+        <Tilt>
+          <GlassCard className="flex flex-col gap-4">
+            <TextHeading level={5}>{title}</TextHeading>
+            <p>{description}</p>
+            <SkillBadgeGroup skills={techStack} />
+          </GlassCard>
+        </Tilt>
       </a>
     </>
   );
