@@ -112,7 +112,15 @@ export default function ParticleBackground() {
 
     if (isCoarsePointer()) {
       renderFrame();
+
+      function onStaticResize() {
+        resize();
+        renderFrame();
+      }
+      window.addEventListener("resize", onStaticResize);
+
       return () => {
+        window.removeEventListener("resize", onStaticResize);
         pointsGeometry.dispose();
         lineGeometry.dispose();
         pointsMaterial.dispose();
