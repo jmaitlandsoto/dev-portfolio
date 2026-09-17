@@ -10,6 +10,8 @@ import React from "react";
 import NavSection from "./Components/NavSection";
 import CursorFollower from "./Components/CursorFollower";
 
+const ParticleBackground = React.lazy(() => import("./Components/ParticleBackground"));
+
 function App() {
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const experienceRef = React.useRef<HTMLDivElement>(null);
@@ -19,6 +21,9 @@ function App() {
   return (
     <>
       <CursorFollower />
+      <React.Suspense fallback={null}>
+        <ParticleBackground />
+      </React.Suspense>
       <div className="relative max-w-screen-xl mx-auto p-6 py-8 md:py-24">
         <div className="flex flex-col md:flex-row gap-18 md:gap-12">
           <div className="p-1 w-full md:w-5/12 md:ml-[8.333%] md:sticky md:top-24 md:h-[100dvh] flex flex-col justify-start md:overflow-hidden gap-12 ">
