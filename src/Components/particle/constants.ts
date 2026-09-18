@@ -3,9 +3,9 @@
 export const PARTICLE_COUNT = 80;
 export const CONNECT_DISTANCE = 1.4;
 
-export const POINT_SIZE = 0.06;
-export const POINT_OPACITY = 0.35;
-export const LINE_OPACITY = 0.5;
+export const POINT_SIZE = 0.08;
+export const POINT_OPACITY = 0.45;
+export const LINE_OPACITY = 0.7;
 
 // Matches the existing dark-theme palette: #gradient-box's navy glow and
 // the badge foreground ice-blue used elsewhere in the dark theme.
@@ -14,8 +14,8 @@ export const LINE_COLOR = 0x183453;
 
 // Light-theme equivalents: darker point color keeps dots visible against
 // the near-white background; pale line color keeps the mesh subtle.
-export const POINT_COLOR_LIGHT = 0x4a6fa5;
-export const LINE_COLOR_LIGHT = 0xcfe0f3;
+export const POINT_COLOR_LIGHT = 0x3a4f85;
+export const LINE_COLOR_LIGHT = 0xafc0d3;
 
 export const PARALLAX_LERP = 0.08;
 

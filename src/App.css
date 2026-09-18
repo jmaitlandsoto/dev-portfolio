@@ -45,7 +45,7 @@
   object-fit: cover;
   object-position: 50% 100%; /* Adjust as needed */
   border-radius: 50%; /* This makes the image round */
-  box-shadow: 0 0 0 3px black;
+  /* box-shadow: 0 0 0 3px black; */
   margin-bottom: 3px;
 }
 
@@ -95,13 +95,13 @@ p {
 
 a {
   text-decoration: none;
-  color: var(--foreground);
+  color: var(--primary-foreground);
   font-weight: 600;
   transition: color 300ms;
 }
 
 a:hover {
-  color: var(--primary-foreground);
+  color: var(--foreground);
 }
 
 .nav-indicator {

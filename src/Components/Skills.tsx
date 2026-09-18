@@ -1,11 +1,14 @@
 import * as React from "react";
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 import { TextHeading } from "./TextHeading";
 import { SkillBadge } from "./SkillBadge";
-import { Input } from "@/components/ui/input";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { skillCategories } from "../data/skills";
 import { fadeInUp, MotionSectionProps } from "./motion/variants";
+import { GlassCard } from "./GlassCard";
+import { Field, FieldLabel } from "@/components/ui/field";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "cn";
 
 export interface ISkillsProps {}
 
@@ -17,24 +20,32 @@ const allSkills = skillCategories
 
 const categories = skillCategories.map((group) => group.category);
 
+const reorderTransition: Transition = {
+  type: "spring",
+  stiffness: 500,
+  damping: 40,
+  mass: 1,
+};
+
 export const Skills = React.forwardRef<HTMLDivElement, MotionSectionProps>(
   (props, ref) => {
-    const [query, setQuery] = React.useState("");
     const [selectedCategories, setSelectedCategories] = React.useState<
       string[]
     >([]);
 
-    const filteredSkills = React.useMemo(() => {
-      const prefix = query.trim().toLowerCase();
-      return allSkills
-        .filter((skill) => skill.name.toLowerCase().startsWith(prefix))
-        .filter(
-          (skill) =>
-            selectedCategories.length === 0 ||
-            selectedCategories.includes(skill.category),
-        )
-        .map((skill) => skill.name);
-    }, [query, selectedCategories]);
+    const sortedSkills = React.useMemo(() => {
+      if (selectedCategories.length === 0) {
+        return allSkills.map((skill) => skill);
+      }
+      const inSelected: { name: string; category: string }[] = [];
+      const rest: { name: string; category: string }[] = [];
+      for (const skill of allSkills) {
+        (selectedCategories.includes(skill.category) ? inSelected : rest).push(
+          skill,
+        );
+      }
+      return [...inSelected, ...rest];
+    }, [selectedCategories]);
 
     return (
       <motion.section
@@ -47,40 +58,50 @@ export const Skills = React.forwardRef<HTMLDivElement, MotionSectionProps>(
         viewport={{ once: true, amount: 0.3 }}
       >
         <TextHeading level={2}>Skills</TextHeading>
-        <div className="flex flex-col gap-4">
-          {/* <Input
-            type="text"
-            placeholder="Search skills…"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="px-4 py-2 border-transparent rounded-full h-auto glass"
-          /> */}
-          <ToggleGroup
-            type="multiple"
-            value={selectedCategories}
-            onValueChange={setSelectedCategories}
-            className="flex-wrap gap-2"
-          >
-            {categories.map((category) => (
-              <ToggleGroupItem
-                key={category}
-                value={category}
-                className="px-4 py-2 rounded-full"
+        <GlassCard>
+          <div className="flex flex-col gap-4">
+            <Field>
+              <FieldLabel>Sort by skill category</FieldLabel>
+              <ToggleGroup
+                type="multiple"
+                value={selectedCategories}
+                onValueChange={setSelectedCategories}
+                className="flex-wrap gap-2"
               >
-                {category}
-              </ToggleGroupItem>
-            ))}
-          </ToggleGroup>
-        </div>
-        {filteredSkills.length > 0 ? (
+                {categories.map((category) => (
+                  <ToggleGroupItem
+                    key={category}
+                    value={category}
+                    className="px-4 py-2 rounded-full"
+                  >
+                    {category}
+                  </ToggleGroupItem>
+                ))}
+              </ToggleGroup>
+            </Field>
+            <Separator />
+          </div>
           <div className="flex flex-row flex-wrap gap-2">
-            {filteredSkills.map((skill) => (
-              <SkillBadge key={skill}>{skill}</SkillBadge>
+            {sortedSkills.map((skill) => (
+              <motion.div
+                key={skill.name}
+                layout
+                transition={reorderTransition}
+              >
+                <div
+                  className={cn(
+                    selectedCategories.length === 0 ||
+                      selectedCategories.includes(skill.category)
+                      ? "opacity-100"
+                      : "opacity-40",
+                  )}
+                >
+                  <SkillBadge>{skill.name}</SkillBadge>
+                </div>
+              </motion.div>
             ))}
           </div>
-        ) : (
-          <p className="text-muted-foreground">No matching skills.</p>
-        )}
+        </GlassCard>
       </motion.section>
     );
   },

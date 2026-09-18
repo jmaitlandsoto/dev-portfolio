@@ -17,11 +17,9 @@ export function ThemeToggle({ className }: IThemeToggleProps) {
     <motion.div whileHover={{ y: -2 }}>
       <Button
         onClick={toggleTheme}
+        variant={"outline"}
         aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-        className={cn(
-          "bg-card hover:bg-card p-0 border border-input rounded-full size-12 text-card-foreground cursor-pointer glass",
-          className,
-        )}
+        className={cn("rounded-full size-12", className)}
       >
         {isDark ? <Moon className="size-4" /> : <Sun className="size-4" />}
       </Button>

@@ -38,11 +38,11 @@ export function HeroSection(props: IHeroSectionProps) {
           architecture through CI/CD delivery. Based in Toronto, ON.
         </motion.p>
         <div className="inline-block relative">
-          <Tilt variants={portraitVariant} maxTilt={10} perspective={1000}>
+          <Tilt variants={portraitVariant} maxTilt={10}>
             <img
               src={portrait}
               alt="Hero"
-              className="p-1 rounded-[50%] w-40 md:w-60 object-cover object-position-center aspect-square transition-all glass align-start"
+              className="p-2 hover:p-1 rounded-full w-40 md:w-60 object-cover object-position-center aspect-square transition-all glass align-start"
             />
           </Tilt>
           <ThemeToggle className="right-0 md:right-2 bottom-0 md:bottom-2 absolute" />

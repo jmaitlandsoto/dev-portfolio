@@ -49,11 +49,10 @@ export function ExperienceCard(props: IInfoCardProps) {
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="self-center"
+              className="flex justify-center items-center self-center gap-1"
             >
-              <Button variant={"outline"}>
-                Learn more <ExternalLink />
-              </Button>
+              Learn more
+              <ExternalLink className="size-4 transition-transform" />
             </a>
           )}
         </div>

@@ -18,15 +18,15 @@ export interface ITiltProps extends Omit<
   scale?: number;
 }
 
-const SPRING = { stiffness: 300, damping: 30, mass: 0.5 };
+const SPRING = { stiffness: 300, damping: 120, mass: 0.5 };
 
 export function Tilt({
   children,
   className,
   style,
   maxTilt = 2,
-  perspective = 800,
-  scale = 1.005,
+  perspective = 500,
+  scale = 1,
   ...props
 }: ITiltProps) {
   const pointerX = useMotionValue(0);
@@ -59,7 +59,7 @@ export function Tilt({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       whileHover={{ scale }}
-      transition={{ duration: 0.2, ease: EASE }}
+      transition={{ duration: 1, ease: EASE }}
       {...props}
     >
       {children}

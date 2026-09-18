@@ -5,12 +5,6 @@
 
 @variant dark (&:is(.dark *));
 
-@utility glass {
-  background-color: var(--glass-bg);
-  border-color: var(--glass-border);
-  box-shadow: var(--glass-shadow);
-}
-
 @utility group/toggle {
   @apply data-[state=on]:bg-primary/30 data-[state=on]:text-primary-foreground inline-flex justify-center items-center gap-1 border text-sm whitespace-nowrap transition-all cursor-pointer;
 }
@@ -40,6 +34,12 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+  --color-glass: var(--glass-bg);
+  --shadow-glass: var(--glass-shadow);
+}
+
+@utility glass {
+  @apply bg-card/50 shadow-glass backdrop-blur-xs border-border -translate-y-0.5 scale-101 duration-700;
 }
 
 :root {
@@ -58,14 +58,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
+/* a {
   font-weight: 700;
   color: #d6d8ff;
   text-decoration: inherit;
 }
 a:hover {
   color: #9fa4ff;
-}
+} */
 
 body {
   margin: 0;
@@ -87,7 +87,7 @@ h1 {
   }
   :root {
     /* Portfolio palette (light): navy-tinted white bg, deep-navy text, ice-blue badges */
-    --background: oklch(0.98 0.005 282);
+    --background: oklch(93.953% 0.01784 253.453);
     --foreground: oklch(0.15 0.03 282);
     --card: oklch(
       0.98 0.005 282
@@ -104,17 +104,18 @@ h1 {
     --accent: oklch(0.93 0.01 282);
     --accent-foreground: oklch(0.15 0.03 282);
     --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0 0 0 / 10%);
+    --border: oklch(0 0 0 / 20%);
     --input: oklch(0 0 0 / 15%);
     --ring: oklch(0.556 0 0);
     --radius: 0.625rem;
     --glass-bg: rgb(0 0 0 / 1%);
     --glass-border: rgb(0 0 0 / 8%);
-    --glass-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.06);
+    --glass-shadow: inset 0 -4px 0 0
+      color-mix(in oklab, var(--border) 40%, transparent);
   }
   .dark {
     /* Portfolio palette: deep navy bg, aliceblue text, #c8e2ff badges */
-    --background: oklch(0.09 0.04 282); /* rgb(19, 15, 42) */
+    --background: oklch(16.101% 0.03125 288.491); /* rgb(19, 15, 42) */
     --foreground: oklch(0.97 0.007 220); /* aliceblue */
     --card: oklch(
       0.09 0.04 282
@@ -136,7 +137,6 @@ h1 {
     --ring: oklch(0.556 0 0);
     --glass-bg: rgb(255 255 255 / 2%);
     --glass-border: rgb(255 255 255 / 10%);
-    --glass-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 0.1);
   }
   * {
     @apply border-border outline-ring/50;

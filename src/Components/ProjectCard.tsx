@@ -35,11 +35,9 @@ export function ProjectCard(props: IProjectCardProps) {
           target="_blank"
           rel="noreferrer"
           ref={linkRef} // Assign the linkRef to our link
-          className="self-center"
+          className="flex flex-row self-center gap-1"
         >
-          <Button variant={"outline"}>
-            Learn more <ExternalLink />
-          </Button>
+          Learn more <ExternalLink className="size-4 transition-transform" />
         </a>
       </GlassCard>
     </Tilt>

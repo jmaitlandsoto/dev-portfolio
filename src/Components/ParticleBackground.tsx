@@ -57,14 +57,18 @@ export default function ParticleBackground() {
     let lineMaterial: THREE.LineBasicMaterial;
 
     try {
-      renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: true,
+        alpha: true,
+      });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
       camera = new THREE.PerspectiveCamera(
         50,
         window.innerWidth / window.innerHeight,
         0.1,
-        100
+        100,
       );
       camera.position.z = 8;
 
@@ -73,7 +77,10 @@ export default function ParticleBackground() {
       const dark = isDarkTheme();
 
       pointsGeometry = new THREE.BufferGeometry();
-      pointsGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+      pointsGeometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(positions, 3),
+      );
       pointsMaterial = new THREE.PointsMaterial({
         color: dark ? POINT_COLOR : POINT_COLOR_LIGHT,
         size: POINT_SIZE,
@@ -119,12 +126,16 @@ export default function ParticleBackground() {
         pos[i * 3] += velocities[i][0];
         pos[i * 3 + 1] += velocities[i][1];
         if (pos[i * 3] > boundX || pos[i * 3] < -boundX) velocities[i][0] *= -1;
-        if (pos[i * 3 + 1] > boundY || pos[i * 3 + 1] < -boundY) velocities[i][1] *= -1;
+        if (pos[i * 3 + 1] > boundY || pos[i * 3 + 1] < -boundY)
+          velocities[i][1] *= -1;
       }
       pointsGeometry.attributes.position.needsUpdate = true;
 
       const segments = findConnections(pos, PARTICLE_COUNT, CONNECT_DISTANCE);
-      lineGeometry.setAttribute("position", new THREE.BufferAttribute(segments, 3));
+      lineGeometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(segments, 3),
+      );
 
       renderer.render(scene, camera);
     }

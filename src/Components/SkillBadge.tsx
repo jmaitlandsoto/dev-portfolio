@@ -8,10 +8,7 @@ export interface ISkillBadgeProps {
 export function SkillBadge(props: ISkillBadgeProps) {
   const { children } = props;
   return (
-    <Badge
-      variant={"default"}
-      className="px-4 py-2 rounded-full glass backdrop-blur-xs"
-    >
+    <Badge variant={"default"} className="px-4 py-2 rounded-full">
       {children}
     </Badge>
   );
