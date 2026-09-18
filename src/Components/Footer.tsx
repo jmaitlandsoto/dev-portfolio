@@ -14,7 +14,7 @@ export function Footer(props: IFooterProps) {
         href="https://www.linkedin.com/in/josh-maitland/"
         target="_blank"
         rel="noreferrer"
-        whileHover={{ y: -3, scale: 1.1 }}
+        whileHover={{ y: -3, scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
         <FontAwesomeIcon icon={faLinkedin} size="2xl" />
@@ -24,7 +24,7 @@ export function Footer(props: IFooterProps) {
         href="https://github.com/jmaitlandsoto"
         target="_blank"
         rel="noreferrer"
-        whileHover={{ y: -3, scale: 1.1 }}
+        whileHover={{ y: -3, scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
         <FontAwesomeIcon icon={faGithub} size="2xl" />

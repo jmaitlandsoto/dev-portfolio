@@ -24,9 +24,9 @@ export function Tilt({
   children,
   className,
   style,
-  maxTilt = 1,
+  maxTilt = 2,
   perspective = 800,
-  scale = 1.02,
+  scale = 1.005,
   ...props
 }: ITiltProps) {
   const pointerX = useMotionValue(0);

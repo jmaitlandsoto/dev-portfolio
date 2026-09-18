@@ -43,7 +43,7 @@ export default function CursorFollower(props: ICursorFollowerProps) {
   return (
     <div
       id="gradient-box"
-      className="w-150 h-150 bg-radial from-primary/85 via-primary/8 to-primary/0 top-0 left-0 fixed rounded-full pointer-events-none z-0 opacity-30 transition-opacity duration-200 ease-in-out [body.card-hovered_&]:opacity-100  [body.card-hovered_&]:duration-600"
+      className="top-0 left-0 z-0 fixed bg-radial from-primary/85 via-primary/8 to-primary/0 opacity-15 [body.card-hovered_&]:opacity-30 rounded-full w-150 h-150 transition-opacity duration-200 [body.card-hovered_&]:duration-600 ease-in-out pointer-events-none"
     ></div>
   );
 }

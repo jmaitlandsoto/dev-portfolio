@@ -22,7 +22,7 @@ export function HeroSection(props: IHeroSectionProps) {
   return (
     <section>
       <motion.div
-        className="flex flex-col gap-8 items-start"
+        className="flex flex-col items-start gap-8"
         variants={staggerContainer}
         initial="hidden"
         animate="show"
@@ -37,20 +37,15 @@ export function HeroSection(props: IHeroSectionProps) {
           Building distributed systems, AI agents, and production APIs — from
           architecture through CI/CD delivery. Based in Toronto, ON.
         </motion.p>
-        <div className="relative inline-block">
-          <Tilt
-            variants={portraitVariant}
-            maxTilt={8}
-            scale={1}
-            perspective={1000}
-          >
+        <div className="inline-block relative">
+          <Tilt variants={portraitVariant} maxTilt={10} perspective={1000}>
             <img
               src={portrait}
               alt="Hero"
-              className="w-40 md:w-60  aspect-square object-cover object-position-center glass rounded-[50%] p-1 align-start transition-all"
+              className="p-1 rounded-[50%] w-40 md:w-60 object-cover object-position-center aspect-square transition-all glass align-start"
             />
           </Tilt>
-          <ThemeToggle className="absolute bottom-0 right-0 md:bottom-2 md:right-2" />
+          <ThemeToggle className="right-0 md:right-2 bottom-0 md:bottom-2 absolute" />
         </div>
       </motion.div>
     </section>

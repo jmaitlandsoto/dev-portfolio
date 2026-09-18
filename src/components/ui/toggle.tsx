@@ -4,12 +4,12 @@ import { cn } from "cn";
 import { Toggle as TogglePrimitive } from "radix-ui";
 
 const toggleVariants = cva(
-  "group/toggle inline-flex items-center border   cursor-pointer justify-center gap-1 rounded-lg  text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=on]:bg-red-50 data-[state=on]:text-secondary-foreground data-[state=on]:opacity-100 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  // "group/toggle inline-flex items-center border   cursor-pointer justify-center gap-1 rounded-lg  text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=on]:bg-red-50 data-[state=on]:text-secondary-foreground data-[state=on]:opacity-100 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/toggle",
   {
     variants: {
       variant: {
-        default:
-          "border border-input bg-secondary backdrop-blur-sm text-tertiary-foreground opacity-60 ",
+        default: "backdrop-blur-sm",
         outline: "border border-input bg-transparent hover:bg-secondary",
         theme:
           "bg-card hover:bg-card-hover  border opacity-100 border-input hover:bg-secondary data-[state=on]:bg-accent data-[state=on]:text-secodary-foreground ",

@@ -65,7 +65,7 @@ export const Skills = React.forwardRef<HTMLDivElement, MotionSectionProps>(
               <ToggleGroupItem
                 key={category}
                 value={category}
-                className="data-[state=on]:bg-primary/20 px-4 py-2 border-transparent rounded-full data-[state=on]:text-primary-foreground glass"
+                className="px-4 py-2 rounded-full"
               >
                 {category}
               </ToggleGroupItem>
