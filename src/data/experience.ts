@@ -3,6 +3,7 @@ import { Experience } from "../types/Experience";
 export const experience: Experience[] = [
   {
     company: "Iceberg Cyber",
+    href: "https://www.icebergcyber.com/",
     position: "Full Stack Developer",
     startDate: "June 2024",
     endDate: "Present",

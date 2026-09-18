@@ -6,6 +6,8 @@ import { useRef } from "react";
 import { Project } from "../types/Project";
 import { GlassCard } from "./GlassCard";
 import { Tilt } from "./motion";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 export interface IProjectCardProps {
   project: Project;
@@ -23,21 +25,23 @@ export function ProjectCard(props: IProjectCardProps) {
   };
 
   return (
-    <>
-      <a
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        ref={linkRef} // Assign the linkRef to our link
-      >
-        <Tilt>
-          <GlassCard className="flex flex-col gap-4">
-            <TextHeading level={5}>{title}</TextHeading>
-            <p>{description}</p>
-            <SkillBadgeGroup skills={techStack} />
-          </GlassCard>
-        </Tilt>
-      </a>
-    </>
+    <Tilt>
+      <GlassCard className="flex flex-col gap-4">
+        <TextHeading level={5}>{title}</TextHeading>
+        <p>{description}</p>
+        <SkillBadgeGroup skills={techStack} />
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          ref={linkRef} // Assign the linkRef to our link
+          className="self-center"
+        >
+          <Button variant={"outline"}>
+            Learn more <ExternalLink />
+          </Button>
+        </a>
+      </GlassCard>
+    </Tilt>
   );
 }

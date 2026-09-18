@@ -4,6 +4,8 @@ import { Tilt } from "./motion";
 import { SkillBadgeGroup } from "./SkillBadgeGroup";
 import { TextHeading } from "./TextHeading";
 import { Experience } from "../types/Experience";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 export interface IInfoCardProps {
   experience: Experience;
@@ -37,23 +39,27 @@ export function ExperienceCard(props: IInfoCardProps) {
           <ul className="pl-4 list-disc">
             {highlights.map((highlight, i) => (
               <li key={i} className="mb-1">
-                <p className="mb-0 inline">{highlight}</p>
+                <p className="inline mb-0">{highlight}</p>
               </li>
             ))}
           </ul>
           <SkillBadgeGroup skills={techStack} />
+          {href && (
+            <a
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className="self-center"
+            >
+              <Button variant={"outline"}>
+                Learn more <ExternalLink />
+              </Button>
+            </a>
+          )}
         </div>
       </GlassCard>
     </Tilt>
   );
 
-  if (!href) {
-    return cardBody;
-  }
-
-  return (
-    <a href={href} target="_blank" rel="noreferrer">
-      {cardBody}
-    </a>
-  );
+  return cardBody;
 }
