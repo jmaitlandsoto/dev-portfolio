@@ -39,7 +39,7 @@
 }
 
 @utility glass {
-  @apply bg-card/50 shadow-glass backdrop-blur-xs border-border -translate-y-0.5 scale-101 duration-700;
+  @apply bg-card/50 shadow-glass backdrop-blur-xs border-border -translate-y-0.5 scale-101;
 }
 
 :root {

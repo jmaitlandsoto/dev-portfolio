@@ -17,8 +17,8 @@ export const GlassCard = React.forwardRef<
     <div ref={cardRef}>
       <Card
         className={cn(
-          "bg-transparent shadow-none backdrop-blur-none -mx-6 p-4 md:p-6 py-6 border border-transparent ring-0 transition-all duration-300",
-          inView ? "glass!" : "hover:glass",
+          "bg-transparent shadow-none backdrop-blur-none -mx-6 p-4 md:p-6 py-6 border border-transparent ring-0 transition-all opacity-60 duration-200 ease-out",
+          inView ? "glass! opacity-100" : "hover:glass hover:opacity-100",
           className,
         )}
         {...props}

@@ -30,12 +30,12 @@ function App() {
         <div className="flex md:flex-row flex-col gap-12">
           <div className="md:top-24 md:sticky flex flex-col justify-start gap-12 md:ml-[8.333%] w-full md:w-5/12 md:h-[100dvh] md:overflow-hidden">
             <HeroSection />
-            <NavSection
+            {/* <NavSection
               aboutRef={aboutRef}
               experienceRef={experienceRef}
               skillsRef={skillsRef}
               projectsRef={projectsRef}
-            />
+            /> */}
             <Footer />
           </div>
 
