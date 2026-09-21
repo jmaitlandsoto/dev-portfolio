@@ -4,14 +4,14 @@ import {
   Footer,
   Projects,
   Skills,
-} from "./Components";
-import { About } from "./Components/About";
+} from "./components";
+import { About } from "./components/About";
 import React from "react";
-import NavSection from "./Components/NavSection";
-import CursorFollower from "./Components/CursorFollower";
+import NavSection from "./components/NavSection";
+import CursorFollower from "./components/CursorFollower";
 
 const ParticleBackground = React.lazy(
-  () => import("./Components/ParticleBackground"),
+  () => import("./components/ParticleBackground"),
 );
 
 function App() {
