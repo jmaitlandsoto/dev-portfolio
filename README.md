@@ -44,6 +44,18 @@ My journey into software began in 2020 as a coding instructor at RP4K, while pur
 - [LinkedIn](https://www.linkedin.com/in/josh-maitland/)
 - [GitHub](https://github.com/jmaitlandsoto)
 
+## Docker
+
+You can use docker to host this on your own machine. You make sure you have [Docker Desktop](https://docs.docker.com/desktop/) installed and running.
+
+Clone the repo.
+
+Start the docker container.
+
+`docker compose up --build --detatch`
+
+Open [localhost:5173](http://localhost:5173)
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).

@@ -7,6 +7,8 @@
     "node": ">=20"
   },
   "scripts": {
+    "host": "vite --host",
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
