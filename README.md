@@ -46,13 +46,20 @@ My journey into software began in 2020 as a coding instructor at RP4K, while pur
 
 ## Docker
 
-You can use docker to host this on your own machine. You make sure you have [Docker Desktop](https://docs.docker.com/desktop/) installed and running.
+You can use Docker to host this on your own machine. Make sure you have [Docker](https://docs.docker.com/engine/install/) installed and running.
 
 Clone the repo.
 
-Start the docker container.
+**Production** (builds a static bundle served by nginx, plus a Cloudflare Tunnel so it's reachable without opening any router ports):
 
-`docker compose up --build --detatch`
+1. Copy `.env.example` to `.env` and set `CLOUDFLARE_TUNNEL_TOKEN` (create a tunnel in the [Cloudflare Zero Trust dashboard](https://one.dash.cloudflare.com/) under Networks > Tunnels, route its public hostname to `http://devportfolio:80`, and copy the token it gives you).
+2. `docker compose up --build --detach`
+
+The site is served on port 80 inside the container (exposed locally at `localhost:8080` for testing) and proxied to the internet via the tunnel — no port forwarding needed.
+
+**Development** (runs the Vite dev server with hot reload instead of the production build):
+
+`docker compose -f compose.debug.yaml up --build --detach`
 
 Open [localhost:5173](http://localhost:5173)
 

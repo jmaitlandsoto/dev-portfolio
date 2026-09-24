@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 *.timestamp-*.mjs
+.env
 
 # Editor directories and files
 .vscode/*
