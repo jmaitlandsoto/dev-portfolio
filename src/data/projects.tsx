@@ -1,12 +1,12 @@
 import { Project } from "../types/Project";
+import React from "react";
 
 export const projects: Project[] = [
   {
     href: "https://github.com/jmaitlandsoto/dev-portfolio",
     title: "Dev Portfolio",
-    description:
-      "This portfolio site — built to showcase my work and skills to recruiters. Features a clean, modern UI with smooth navigation and responsive design.",
-    techStack: ["Vite", "React", "TypeScript", "Tailwind CSS"],
+    description:<React.Fragment>This portfolio site — clean, and modern UI is cool and all, but my favourite part of this project is that I deployed it onto a Raspberry Pi 5 sitting next to my modem. To deploy I SSH into the Pi, clone the repo, start the Docker container, and use Cloudflare to expose the port to the internet. <a href="https://pi.joshmaitland.ca" target="_blank" rel="noopener noreferrer">Check it out!</a></React.Fragment>,
+    techStack: ["Vite", "React", "TypeScript", "Tailwind CSS", 'Docker', "Cloudflare Tunnels", "Raspberry Pi"],
   },
   {
     href: "https://github.com/jmaitlandsoto/housebot",
@@ -20,6 +20,6 @@ export const projects: Project[] = [
     title: "ATS Scanner MCP",
     description:
       "A Jobscan-style ATS resume scanner packaged as a Model Context Protocol server, so Claude Desktop can score a resume against a job posting, surface missing keywords, and propose honest edits — all locally, no subscription or API key required.",
-    techStack: ["TypeScript", "Node.js", "Model Context Protocol", "Vitest"],
+    techStack: ["TypeScript", "Node.js", "Model Context Protocol (MPC)", "Vitest"],
   },
 ];
