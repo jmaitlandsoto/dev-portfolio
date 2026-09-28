@@ -61,6 +61,7 @@ if [ "$BEFORE" != "$AFTER" ]; then
   log "Deploying new version..."
   docker compose up -d
   docker image prune -f
+  log "New version deployed." 
 else
   log "No new version found."
 fi

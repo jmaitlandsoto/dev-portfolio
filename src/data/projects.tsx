@@ -7,11 +7,11 @@ export const projects: Project[] = [
     title: "Dev Portfolio",
     description: (
       <React.Fragment>
-        Clean and modern UI is cool and all, but my favourite part of this
-        project is that it's being served from a Raspberry Pi 5 sitting at my
-        desk. I use GitHub Actions to automatically push the image to GHCR, for
-        which my Pi is polling for changes. When changes are detected it
-        repulls, builds, and runs everything.{" "}
+        Clean and modern UI is cool and all, but the part of this project is
+        that it's being served from a Raspberry Pi 5 sitting at my desk. I use
+        GitHub Actions to automatically push the image to GHCR. When the Pi
+        detects changes it re-pulls, builds, and runs everything. Thank god for
+        Cloudflare Tunnels.
         <a
           href="https://pi.joshmaitland.ca"
           target="_blank"
