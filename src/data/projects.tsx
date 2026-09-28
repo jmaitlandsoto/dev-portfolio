@@ -5,8 +5,35 @@ export const projects: Project[] = [
   {
     href: "https://github.com/jmaitlandsoto/dev-portfolio",
     title: "Dev Portfolio",
-    description:<React.Fragment>This portfolio site — clean, and modern UI is cool and all, but my favourite part of this project is that I deployed it onto a Raspberry Pi 5 sitting next to my modem. To deploy I SSH into the Pi, clone the repo, start the Docker container, and use Cloudflare to expose the port to the internet. <a href="https://pi.joshmaitland.ca" target="_blank" rel="noopener noreferrer">Check it out!</a></React.Fragment>,
-    techStack: ["Vite", "React", "TypeScript", "Tailwind CSS", 'Docker', "Cloudflare Tunnels", "Raspberry Pi"],
+    description: (
+      <React.Fragment>
+        Clean and modern UI is cool and all, but my favourite part of this
+        project is that it's being served from a Raspberry Pi 5 sitting at my
+        desk. I use GitHub Actions to automatically push the image to GHCR, for
+        which my Pi is polling for changes. When changes are detected it
+        repulls, builds, and runs everything.{" "}
+        <a
+          href="https://pi.joshmaitland.ca"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Check it out!
+        </a>
+      </React.Fragment>
+    ),
+    techStack: [
+      "Vite",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Docker",
+      "Cloudflare Tunnels",
+      "Raspberry Pi",
+      "CI/CD",
+      "GitHub Actions",
+      "GHCR",
+      "NGINX",
+    ],
   },
   {
     href: "https://github.com/jmaitlandsoto/housebot",
@@ -20,6 +47,11 @@ export const projects: Project[] = [
     title: "ATS Scanner MCP",
     description:
       "A Jobscan-style ATS resume scanner packaged as a Model Context Protocol server, so Claude Desktop can score a resume against a job posting, surface missing keywords, and propose honest edits — all locally, no subscription or API key required.",
-    techStack: ["TypeScript", "Node.js", "Model Context Protocol (MPC)", "Vitest"],
+    techStack: [
+      "TypeScript",
+      "Node.js",
+      "Model Context Protocol (MPC)",
+      "Vitest",
+    ],
   },
 ];
