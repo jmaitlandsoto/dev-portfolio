@@ -1,4 +1,3 @@
-import * as React from "react";
 import { motion, Variants } from "framer-motion";
 import portrait from "../assets/josh-portrait.jpg";
 import { TextHeading } from "./TextHeading";
@@ -18,7 +17,7 @@ const portraitVariant: Variants = {
   },
 };
 
-export function HeroSection(props: IHeroSectionProps) {
+export function HeroSection(_props: IHeroSectionProps) {
   return (
     <section>
       <motion.div

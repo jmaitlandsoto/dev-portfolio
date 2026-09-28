@@ -6,7 +6,7 @@ import { StaggerItem } from "./motion/StaggerItem";
 
 export interface IFooterProps {}
 
-export function Footer(props: IFooterProps) {
+export function Footer(_props: IFooterProps) {
   return (
     <StaggerGroup as="footer" className="flex flex-row gap-4 align-end">
       <StaggerItem

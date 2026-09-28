@@ -15,7 +15,7 @@ export default function NavSection(props: INavSectionProps) {
 
   const handleHashChange = React.useCallback(() => {
     setCurrentHash(window.location.hash);
-  }, [window.location.hash]);
+  }, []);
 
   React.useEffect(() => {
     // Listen for hash changes
@@ -23,7 +23,7 @@ export default function NavSection(props: INavSectionProps) {
 
     // Cleanup after unmount
     return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
+  }, [handleHashChange]);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +62,7 @@ export default function NavSection(props: INavSectionProps) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [aboutRef, experienceRef, skillsRef, projectsRef]);
 
   function scrollToComponent(element: HTMLDivElement | null) {
     if (element === null) return console.error("Element is null");

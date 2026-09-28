@@ -36,3 +36,5 @@ export const Projects = React.forwardRef<HTMLDivElement, MotionSectionProps>((pr
     </motion.section>
   );
 });
+
+Projects.displayName = "Projects";

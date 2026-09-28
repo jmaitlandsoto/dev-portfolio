@@ -1,10 +1,8 @@
-import * as React from "react";
 import { GlassCard } from "./GlassCard";
 import { Tilt } from "./motion";
 import { SkillBadgeGroup } from "./SkillBadgeGroup";
 import { TextHeading } from "./TextHeading";
 import { Experience } from "../types/Experience";
-import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
 export interface IInfoCardProps {

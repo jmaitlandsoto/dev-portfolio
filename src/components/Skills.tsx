@@ -106,3 +106,5 @@ export const Skills = React.forwardRef<HTMLDivElement, MotionSectionProps>(
     );
   },
 );
+
+Skills.displayName = "Skills";

@@ -1,13 +1,12 @@
 import * as React from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { all } from "three/src/nodes/math/MathNode.js";
 
 export const GlassCard = React.forwardRef<
   HTMLDivElement,
   React.ComponentPropsWithoutRef<typeof Card>
->(({ className, onMouseEnter, onMouseLeave, ...props }, ref) => {
+>(({ className, onMouseEnter, onMouseLeave, ...props }, _ref) => {
   const cardRef = React.useRef<HTMLDivElement>(null);
   const inView = useInView(cardRef, {
     amount: "some",

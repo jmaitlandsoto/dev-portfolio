@@ -143,10 +143,10 @@ export default function ParticleBackground() {
     if (isCoarsePointer()) {
       renderFrame();
 
-      function onStaticResize() {
+      const onStaticResize = () => {
         resize();
         renderFrame();
-      }
+      };
       window.addEventListener("resize", onStaticResize);
 
       return () => {

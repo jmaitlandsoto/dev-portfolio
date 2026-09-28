@@ -9,8 +9,6 @@ import {
   staggerItem,
   MotionSectionProps,
 } from "./motion/variants";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
 
 export interface IExperienceProps {}
 
@@ -45,3 +43,5 @@ export const Experience = React.forwardRef<HTMLDivElement, MotionSectionProps>(
     );
   },
 );
+
+Experience.displayName = "Experience";

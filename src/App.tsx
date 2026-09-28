@@ -7,7 +7,6 @@ import {
 } from "./components";
 import { About } from "./components/About";
 import React from "react";
-import NavSection from "./components/NavSection";
 import CursorFollower from "./components/CursorFollower";
 import { PiStatsWidget } from "./components/pi/PiStatsWidget";
 

@@ -1,4 +1,3 @@
-import * as React from "react";
 import { SkillBadge } from "./SkillBadge";
 import { StaggerGroup } from "./motion/StaggerGroup";
 import { StaggerItem } from "./motion/StaggerItem";

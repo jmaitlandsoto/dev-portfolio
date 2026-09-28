@@ -76,3 +76,5 @@ export const About = React.forwardRef<HTMLDivElement, MotionSectionProps>(
     );
   },
 );
+
+About.displayName = "About";
