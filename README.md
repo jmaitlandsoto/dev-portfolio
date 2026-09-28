@@ -53,9 +53,17 @@ Clone the repo.
 **Production** (builds a static bundle served by nginx, plus a Cloudflare Tunnel so it's reachable without opening any router ports):
 
 1. Copy `.env.example` to `.env` and set `CLOUDFLARE_TUNNEL_TOKEN` (create a tunnel in the [Cloudflare Zero Trust dashboard](https://one.dash.cloudflare.com/) under Networks > Tunnels, route its public hostname to `http://devportfolio:80`, and copy the token it gives you).
-2. `docker compose up --build --detach`
+2. `docker compose pull && docker compose up --detach`
 
 The site is served on port 80 inside the container (exposed locally at `localhost:8080` for testing) and proxied to the internet via the tunnel — no port forwarding needed.
+
+**Continuous deployment:** every push to `master` triggers the GitHub Actions workflow in `.github/workflows/deploy.yml`, which builds the production image for `linux/arm64` and publishes it to `ghcr.io/jmaitlandsoto/dev-portfolio` (tagged `latest` and with the commit SHA). The host picks up new images with a cron job:
+
+```
+*/5 * * * * cd ~/dev-portfolio && docker compose pull -q && docker compose up -d && docker image prune -f
+```
+
+`docker compose up -d` only recreates containers whose image changed, so this is a no-op when nothing new was published. To build locally instead of pulling, use `docker compose up --build --detach`.
 
 **Development** (runs the Vite dev server with hot reload instead of the production build):
 

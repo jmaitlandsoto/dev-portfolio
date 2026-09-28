@@ -1,6 +1,6 @@
 services:
   devportfolio:
-    image: devportfolio
+    image: ghcr.io/jmaitlandsoto/dev-portfolio:latest
     build:
       context: .
       dockerfile: ./Dockerfile
