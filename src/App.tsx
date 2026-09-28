@@ -9,6 +9,7 @@ import { About } from "./components/About";
 import React from "react";
 import NavSection from "./components/NavSection";
 import CursorFollower from "./components/CursorFollower";
+import { PiStatsWidget } from "./components/pi/PiStatsWidget";
 
 const ParticleBackground = React.lazy(
   () => import("./components/ParticleBackground"),
@@ -23,6 +24,7 @@ function App() {
   return (
     <>
       <CursorFollower />
+      <PiStatsWidget />
       <React.Suspense fallback={null}>
         <ParticleBackground />
       </React.Suspense>

@@ -13,6 +13,8 @@ export default defineConfig({
     environment: 'jsdom',
   },
   server: {
-    allowedHosts: ["selfhosted.joshmaitland.ca"]
+    allowedHosts: ["pi.joshmaitland.ca"],
+    // Local dev: run `npm start` in api/ and the widget talks to it via this proxy
+    proxy: { "/api": "http://localhost:3300" }
   }
 })

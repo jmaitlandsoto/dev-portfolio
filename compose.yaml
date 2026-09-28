@@ -8,6 +8,23 @@ services:
     ports:
       - 8080:80
 
+  # Live Pi stats API. No `ports:` — only nginx can reach it (via /api/).
+  pistats:
+    image: ghcr.io/jmaitlandsoto/dev-portfolio-api:latest
+    build: ./api
+    restart: unless-stopped
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 64m
+    environment:
+      ALLOWED_ORIGINS: https://joshmaitland.ca,https://www.joshmaitland.ca
+    volumes:
+      # Docker hides /sys/firmware inside containers, so mount just the board name
+      - /sys/firmware/devicetree/base/model:/host/model:ro
+
   cloudflared:
     image: cloudflare/cloudflared:latest
     restart: unless-stopped
